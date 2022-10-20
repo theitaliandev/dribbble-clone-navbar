@@ -27,7 +27,6 @@ header {
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
 
@@ -54,14 +53,12 @@ a {
 
 .desktop-menu-btns > li:nth-child(2) {
     color: #6e6d7a;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
 
 .desktop-menu-btns > li:nth-child(3) > p {
     color: #fff;
     background: #ea4c89;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -84,7 +81,6 @@ a {
 .menu-mobile-btns {
     color: #6e6d7a;
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
 
@@ -95,4 +91,53 @@ a {
     background: white;
     margin-top: 70px;
     margin-right: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.mobile-menu > form {
+    background-color: #f3f3f4;
+    padding: 10px 16px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #0d0c22;
+    display: flex;
+}
+
+.mobile-menu > form > input {
+    background-color: transparent;
+    flex-grow: 1;
+    outline: none;
+    border: 1px solid transparent;
+    color: #0d0c22;
+}
+
+.mobile-menu > form:hover {
+    box-shadow: 0px 0px 0px 5px rgba(234, 76, 137, 0.1);
+    border: 1px solid rgba(234, 76, 137, 0.4);
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.mobile-menu > form:focus-within {
+    box-shadow: 0px 0px 0px 5px rgba(234, 76, 137, 0.1);
+    border: 1px solid rgba(234, 76, 137, 0.4);
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.mobile-menu > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-menu > ul > li > a {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6e6d7a;
+    margin-bottom: 16px;
 }

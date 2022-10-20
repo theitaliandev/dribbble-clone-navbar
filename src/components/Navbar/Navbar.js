@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive'
-import {HiSearch, HiMenu} from 'react-icons/hi'
+import {HiSearch, HiMenu, HiX, HiChevronDown} from 'react-icons/hi'
 import { useState } from 'react'
 
 import dribbleLogo from './image.svg'
@@ -7,7 +7,7 @@ import './navbar.css'
 import links from './nav-links'
 
 
-const reactIconStyle = {width: '18px', height: '18px', color: '#9e9ea7', cursor: 'pointer'}
+const reactIconStyle = {width: '20px', height: '20px', color: '#9e9ea7', cursor: 'pointer'}
 
 function DesktopNavbar() {
     return(
@@ -18,7 +18,6 @@ function DesktopNavbar() {
                 </div>
                 <ul className='desktop-menu'>
                     {links.map((link) => {
-                        console.log(link)
                         return <li key={link.name}><a href={link.route}>{link.name}</a></li>
                     })}
                 </ul>
@@ -36,13 +35,25 @@ function MobileNavbar({isOpen, setIsOpen}) {
     return(
         <>
             <nav className='nav-mobile'>
-                    <HiMenu onClick={() => setIsOpen(!isOpen)} style={reactIconStyle}/>
+                    {isOpen ? <HiX onClick={() => setIsOpen(!isOpen)} style={reactIconStyle}/> : <HiMenu onClick={() => setIsOpen(!isOpen)} style={reactIconStyle}/>}
                     <img src={dribbleLogo} alt="Dribble Logo" />
                     <p className='menu-mobile-btns'>Sign in</p>
             </nav>
             {isOpen ? (
                 <div className='mobile-menu'>
-                    <p>Hello world</p>
+                    <form>
+                        <HiSearch style={reactIconStyle}/>
+                        <input placeholder='Search' />
+                    </form>
+                    
+                    <ul>
+                        {links.map(link => {
+                            return  <li key={link.name}>
+                                        <a href={link.route}>{link.name}</a>
+                                        <HiChevronDown style={reactIconStyle}/>
+                                    </li>
+                        })}
+                    </ul>
                 </div>
             ) : (
                 null
